@@ -1,17 +1,20 @@
 {
-  "name": "angular2-seed",
+  "name": "AngularJS2",
   "version": "1.0.0",
-  "scripts": {},
+  "author": "Tahmid Tanzim",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tahmid-tanzim/angular2-seed.git"
+  },
   "devDependencies": {
+    "angular2": "^2.0.0-beta.17",
+    "es6-promise": "^3.1.2",
     "es6-shim": "^0.35.0",
     "gulp": "^3.9.1",
     "gulp-sourcemaps": "^2.0.0-alpha",
     "gulp-typescript": "^2.13.1",
-    "gulp-webserver": "^0.9.1"
-  },
-  "dependencies": {
-    "angular2": "^2.0.0-beta.17",
+    "gulp-webserver": "^0.9.1",
     "reflect-metadata": "^0.1.2",
     "rxjs": "^5.0.0-beta.6",
     "systemjs": "^0.19.27",
