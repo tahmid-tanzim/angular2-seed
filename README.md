@@ -120,3 +120,76 @@ bootstrap(AppComponent);
 ```html
 <input [(ngModel)]="student.name">
 ```
+### 5. Removes the Need for Many Directives
+##### 5.1. Angular 1
+```html
+<div ng-style="vm.story ? {visibility: 'visible'} : {visibility: 'hidden'}">
+    <img ng-src="{{vm.imagePath}}">
+    <a ng-href="{{vm.link}}">{{vm.story}}</a>
+</div>
+```
+##### 5.2. Angular 2
+```html
+<div [style.visibility]="story ? 'visible' : 'hidden'">
+    <img [src]="imagePath">
+    <a [href]="link">story</a>
+</div>
+```
+### 6. Services
+##### 6.1. Angular 1
+```javascript
+angular
+    .module('app')
+    .service('StudentService', StudentService);
+    
+function StudentService() {
+    this.getStudents = function() {
+        return [
+            {id: 1, name: 'Bill Gates'},
+            {id: 2, name: 'Steve Jobs'},
+            {id: 3, name: 'Elon Musk'}
+        ];
+    }
+}
+```
+##### 6.2. Angular 2
+```javascript
+import {Injectable} from 'angular2/core';
+
+@Injectable()    
+export class StudentService {
+    getStudents = () =>  [
+            {id: 1, name: 'Bill Gates'},
+            {id: 2, name: 'Steve Jobs'},
+            {id: 3, name: 'Elon Musk'}
+        ];
+}
+```
+### 7. Dependency Injection
+##### 7.1. Angular 1
+```javascript
+angular
+    .module('app')
+    .controller('StudentsController', StudentsController);
+    
+StudentsController.$inject = ['StudentSevice'];
+function StudentsController(StudentSevice) {
+    var vm = this;
+    var.title = 'Service';
+    vm.students = StudentService.getStudents();
+}
+```
+##### 7.2. Angular 2
+```javascript
+import {StudentService} from './student.service';
+    
+@Component({
+    selector: 'all-students',
+    templateUrl: 'app/students.component.html',
+    providers: [StudentService]
+})
+export class StudentsComponent {
+    constructor(private _studentService: StudentService) {}
+    students = this._studentService.getStudents();
+}
+```
