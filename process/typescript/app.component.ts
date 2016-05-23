@@ -27,14 +27,14 @@ export class AppComponent {
         ];
     }
 
-    onClick(car) {
+    onClick(car, element) {
         console.log(car);
         this.name = car.name;
-
+        element.style.backgroundColor = "#FECE4E";
     }
 
     addCar(name) {
-        if(name) {
+        if (name) {
             this.cars.push({
                 name,
                 country: 'Unknown'

@@ -36,9 +36,10 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         }
                     ];
                 }
-                AppComponent.prototype.onClick = function (car) {
+                AppComponent.prototype.onClick = function (car, element) {
                     console.log(car);
                     this.name = car.name;
+                    element.style.backgroundColor = "#FECE4E";
                 };
                 AppComponent.prototype.addCar = function (name) {
                     if (name) {

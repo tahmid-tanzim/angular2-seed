@@ -1,7 +1,8 @@
 <div class="artistsearch">
     <div class="card search">
         <h1>Car Directory</h1>
-        <label *ngIf="name">{{name}}</label>
+        <label *ngIf="name"
+               [innerHTML]="name"></label>
         <input #newCar
                (keyup.enter)="addCar(newCar.value); newCar.value=''"
                (blur)="addCar(newCar.value); newCar.value=''">
@@ -11,7 +12,8 @@
 
 <ul class="artistlist cf">
     <li *ngFor="#car of cars"
-        (click)="onClick(car)">
+        (click)="onClick(car, carContainer)"
+        #carContainer>
         <h2>{{car.name}}</h2>
 
         <p>{{car.country}}</p>
