@@ -215,3 +215,14 @@ export class CharactersComponent implements OnInit {
     (changed)=changed($event)></story-characters>
 </div>
 ```
+### 31. Two-way Binding
+```html
+<input      
+    [value]="name"
+    (input)="name=$event.target.value">
+```
+Same as
+```html
+<input      
+    [(ngModel)]="name">
+```

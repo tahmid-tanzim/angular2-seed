@@ -4,6 +4,8 @@
         <label *ngIf="name"
                [innerHTML]="name"></label>
         <input #newCar
+               [value]="name"
+               (input)="name=$event.target.value"
                (keyup.enter)="addCar(newCar.value); newCar.value=''"
                (blur)="addCar(newCar.value); newCar.value=''">
         <button (click)="addCar(newCar.value); newCar.value=''">Add</button>
