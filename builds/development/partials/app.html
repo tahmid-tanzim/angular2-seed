@@ -1,23 +1,26 @@
 <div class="artistsearch">
     <div class="card search">
-        <h1>Car Directory</h1>
-        <label *ngIf="name"
-               [innerHTML]="name"></label>
-        <input #newCar
-               [value]="name"
-               (input)="name=$event.target.value"
-               (keyup.enter)="addCar(newCar.value); newCar.value=''"
-               (blur)="addCar(newCar.value); newCar.value=''">
-        <button (click)="addCar(newCar.value); newCar.value=''">Add</button>
+        <h1>Artist Directory</h1>
+        <!--<input #newCar-->
+        <!--[value]="name"-->
+        <!--(input)="name=$event.target.value"-->
+        <!--(keyup.enter)="addCar(newCar.value); newCar.value=''"-->
+        <!--(blur)="addCar(newCar.value); newCar.value=''">-->
+        <!--<button class="btn" (click)="addCar(newCar.value); newCar.value=''">Add</button>-->
+        <input [(ngModel)]="query" placeholder="Search...">
     </div>
 </div>
 
 <ul class="artistlist cf">
-    <li *ngFor="#car of cars"
-        (click)="onClick(car, carContainer)"
-        #carContainer>
-        <h2>{{car.name}}</h2>
+    <li class="artist cf" *ngFor="#item of artists">
 
-        <p>{{car.country}}</p>
+        <img src="images/{{item.shortname}}_tn.jpg"
+             alt="{{item.name}} Photo">
+
+        <div class="info">
+            <h2>{{item.name}}</h2>
+
+            <p>{{item.reknown}}</p>
+        </div>
     </li>
 </ul>
