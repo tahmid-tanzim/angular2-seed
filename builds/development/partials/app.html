@@ -1,13 +1,19 @@
 <div class="artistsearch">
     <div class="card search">
-        <h1>Artist Directory</h1>
-        <span *ngIf="name">{{name}}</span>
+        <h1>Car Directory</h1>
+        <label *ngIf="name">{{name}}</label>
+        <input #newCar
+               (keyup.enter)="addCar(newCar.value); newCar.value=''"
+               (blur)="addCar(newCar.value); newCar.value=''">
+        <button (click)="addCar(newCar.value); newCar.value=''">Add</button>
     </div>
 </div>
 
 <ul class="artistlist cf">
-    <li *ngFor="#car of cars">
+    <li *ngFor="#car of cars"
+        (click)="onClick(car)">
         <h2>{{car.name}}</h2>
+
         <p>{{car.country}}</p>
     </li>
 </ul>

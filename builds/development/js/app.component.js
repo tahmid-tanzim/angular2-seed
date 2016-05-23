@@ -36,6 +36,18 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         }
                     ];
                 }
+                AppComponent.prototype.onClick = function (car) {
+                    console.log(car);
+                    this.name = car.name;
+                };
+                AppComponent.prototype.addCar = function (name) {
+                    if (name) {
+                        this.cars.push({
+                            name: name,
+                            country: 'Unknown'
+                        });
+                    }
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',

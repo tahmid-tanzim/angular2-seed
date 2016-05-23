@@ -27,4 +27,19 @@ export class AppComponent {
         ];
     }
 
+    onClick(car) {
+        console.log(car);
+        this.name = car.name;
+
+    }
+
+    addCar(name) {
+        if(name) {
+            this.cars.push({
+                name,
+                country: 'Unknown'
+            });
+        }
+    }
+
 }
