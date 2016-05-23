@@ -1,22 +1,24 @@
 import {Component} from 'angular2/core';
 import {ArtistItemComponent} from './artist-item.component';
-
-interface Artist {
-    name: string;
-    shortname: string;
-    reknown: string;
-    bio: string;
-}
+import {ArtistDetailsComponent} from './artist-details.component';
+import {Artist} from './artist';
+import {SearchPipe} from './search.pipe';
 
 @Component({
     selector: 'my-app',
     templateUrl: 'partials/app.html',
-    directives: [ArtistItemComponent],
+    directives: [ArtistItemComponent, ArtistDetailsComponent],
+    pipes: [SearchPipe],
     styleUrls: ['css/app.css']
 })
 
 export class AppComponent {
     artists = ARTISTS;
+    currentArtist: Artist;
+
+    showArtist(val) {
+        this.currentArtist = val;
+    }
 }
 
 var ARTISTS:Artist[] = [

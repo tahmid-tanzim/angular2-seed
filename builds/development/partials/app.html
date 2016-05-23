@@ -11,8 +11,13 @@
     </div>
 </div>
 
-<ul class="artistlist cf">
-    <li class="artist cf" *ngFor="#item of artists">
+<ul *ngIf="query" class="artistlist cf">
+    <li class="artist cf"
+        (click)="showArtist(item); query='';"
+        *ngFor="#item of (artists) | find:query">
         <artist-item class="content" [artist]="item"></artist-item>
     </li>
 </ul>
+
+<artist-details *ngIf="currentArtist"
+                [artist]="currentArtist"></artist-details>

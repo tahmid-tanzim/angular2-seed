@@ -11,30 +11,30 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var ArtistItemComponent;
+    var ArtistDetailsComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            ArtistItemComponent = (function () {
-                function ArtistItemComponent() {
+            ArtistDetailsComponent = (function () {
+                function ArtistDetailsComponent() {
                 }
-                ArtistItemComponent = __decorate([
+                ArtistDetailsComponent = __decorate([
                     core_1.Component({
-                        selector: 'artist-item',
-                        templateUrl: 'partials/artist-item.html',
-                        styleUrls: ['css/app-items.css'],
+                        selector: 'artist-details',
+                        templateUrl: 'partials/artist-details.html',
+                        styleUrls: ['css/app-details.css'],
                         inputs: ['artist']
                     }), 
                     __metadata('design:paramtypes', [])
-                ], ArtistItemComponent);
-                return ArtistItemComponent;
+                ], ArtistDetailsComponent);
+                return ArtistDetailsComponent;
             }());
-            exports_1("ArtistItemComponent", ArtistItemComponent);
+            exports_1("ArtistDetailsComponent", ArtistDetailsComponent);
         }
     }
 });
 
-//# sourceMappingURL=artist-item.component.js.map
+//# sourceMappingURL=artist-details.component.js.map

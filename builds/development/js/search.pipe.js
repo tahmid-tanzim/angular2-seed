@@ -11,30 +11,33 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var ArtistItemComponent;
+    var SearchPipe;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            ArtistItemComponent = (function () {
-                function ArtistItemComponent() {
+            SearchPipe = (function () {
+                function SearchPipe() {
                 }
-                ArtistItemComponent = __decorate([
-                    core_1.Component({
-                        selector: 'artist-item',
-                        templateUrl: 'partials/artist-item.html',
-                        styleUrls: ['css/app-items.css'],
-                        inputs: ['artist']
+                SearchPipe.prototype.transform = function (pipeData, _a) {
+                    var pipeModifier = _a[0];
+                    return pipeData.filter(function (eachItem) {
+                        return eachItem['name'].toLowerCase().includes(pipeModifier.toLowerCase()) || eachItem['reknown'].toLowerCase().includes(pipeModifier.toLowerCase());
+                    });
+                };
+                SearchPipe = __decorate([
+                    core_1.Pipe({
+                        name: 'find'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], ArtistItemComponent);
-                return ArtistItemComponent;
+                ], SearchPipe);
+                return SearchPipe;
             }());
-            exports_1("ArtistItemComponent", ArtistItemComponent);
+            exports_1("SearchPipe", SearchPipe);
         }
     }
 });
 
-//# sourceMappingURL=artist-item.component.js.map
+//# sourceMappingURL=search.pipe.js.map
