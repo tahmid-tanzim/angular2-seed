@@ -1,4 +1,4 @@
-System.register(['angular2/core', './course.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/platform/browser'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,34 +10,32 @@ System.register(['angular2/core', './course.service'], function(exports_1, conte
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, course_service_1;
-    var CoursesComponent;
+    var core_1, browser_1;
+    var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (course_service_1_1) {
-                course_service_1 = course_service_1_1;
+            function (browser_1_1) {
+                browser_1 = browser_1_1;
             }],
         execute: function() {
-            CoursesComponent = (function () {
-                function CoursesComponent(courseService) {
-                    this.title = "The title of courses page";
-                    this.courses = courseService.getCourses();
+            AppComponent = (function () {
+                function AppComponent() {
                 }
-                CoursesComponent = __decorate([
+                AppComponent = __decorate([
                     core_1.Component({
-                        selector: 'courses',
-                        template: "\n        <h2>Courses</h2>\n        {{title}}\n        <ul>\n            <li *ngFor=\"#course of courses\">{{course}}</li>\n        </ul>\n    ",
-                        providers: [course_service_1.CourseService]
+                        selector: 'my-app',
+                        template: '<h1>Welcome to my App</h1>'
                     }), 
-                    __metadata('design:paramtypes', [course_service_1.CourseService])
-                ], CoursesComponent);
-                return CoursesComponent;
+                    __metadata('design:paramtypes', [])
+                ], AppComponent);
+                return AppComponent;
             }());
-            exports_1("CoursesComponent", CoursesComponent);
+            browser_1.bootstrap(AppComponent);
         }
     }
 });
-//# sourceMappingURL=courses.component.js.map
+
+//# sourceMappingURL=boot.js.map

@@ -193,3 +193,25 @@ export class StudentsComponent {
     students = this._studentService.getStudents();
 }
 ```
+### 30. Component Communication with input and output
+```javascript
+export class CharactersComponent implements OnInit {
+    @Output() changed = new EventEmitter<Character>();
+    @Input() storyId: number;
+    characters: Character[];
+    selectedCharacter: Character;
+    
+    select(selectedCharacter: Character) {
+        this.selectedCharacter = selectedCharacter;
+        this.changed.emit(selectedCharacter); 
+    }
+}
+```
+```html
+<div>
+    <h1>Storyline Tracker</h1>
+    <h3>Component Demo</h3>
+    <story-characters [storyId]="7" 
+    (changed)=changed($event)></story-characters>
+</div>
+```
