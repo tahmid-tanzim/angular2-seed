@@ -20,6 +20,21 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.name = 'Tahmid Tanzim Lupin';
+                    this.cars = [
+                        {
+                            name: 'Toyota Corolla',
+                            country: 'Japan'
+                        },
+                        {
+                            name: 'Mercedes Benz',
+                            country: 'Germany'
+                        },
+                        {
+                            name: 'Lamborghini Aventador',
+                            country: 'Italy'
+                        }
+                    ];
                 }
                 AppComponent = __decorate([
                     core_1.Component({

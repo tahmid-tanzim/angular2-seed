@@ -1,6 +1,13 @@
 <div class="artistsearch">
     <div class="card search">
         <h1>Artist Directory</h1>
-        <span>name</span>
+        <span *ngIf="name">{{name}}</span>
     </div>
 </div>
+
+<ul class="artistlist cf">
+    <li *ngFor="#car of cars">
+        <h2>{{car.name}}</h2>
+        <p>{{car.country}}</p>
+    </li>
+</ul>
